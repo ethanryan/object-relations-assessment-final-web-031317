@@ -1,36 +1,30 @@
+#ruby tools/console.rb
+
 class Rating
-  attr_accessor :score, :viewer, :movie
+  attr_accessor :movie, :score, :viewer #putting these alphabetically
 
   ALL = []
 
-  def initialize(score, viewer, movie)
+  def initialize(movie, score, viewer) #putting these alphabetically
+    @movie = movie
     @score = score
     @viewer = viewer
-    @movie = movie
     ALL << self
   end
+  #blow_review = Rating.new("Blow", 5, "bob")
+
 
   def self.all
     ALL
   end
+  #Rating.all => [#<Rating:0x007fb2468273f0
+  # @movie="Blow",
+  # @score=5,
+  # @viewer="bob">]
+  #looks like attributes are listed alphabetically
 
-  def viewer(self)
-    self.viewer
-  end
+  #blow_review.viewer => "bob"
 
-  def movie(self)
-    self.rating
-  end
-
+  #blow_review.movie => "Blow"
 
 end
-
-
-# Build out the following methods on the Rating class
-#
-# + Rating.all
-#   + returns all of the ratings
-# + Rating#viewer
-#   + returns the viewer for that given rating
-# + Rating#movie
-#   + returns the movie for that given rating
